@@ -1,0 +1,14 @@
+title: Joseph Helbing - Resume
+email: Joehelbing@gmail.com
+description: >- # this means to ignore newlines until "
+  This is the resume of Joseph Helbing, a Machine Learning Engineer and Data Scientist.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+theme: minima
+
+# Build settings
+github:
+  is_project_page: true
+  repository_url: https://github.com/JoeHelbing/JoeHelbing.github.io
+  baseurl: "/"
+  url: "https://JoeHelbing.github.io"
