@@ -208,12 +208,49 @@
       }
       
       .download-btn {
-        position: relative;
-        top: auto;
-        right: auto;
-        display: block;
+        position: static;
         margin: 20px auto;
         width: fit-content;
+      }
+      
+      .skills-grid, div[style*="display: grid"] {
+        grid-template-columns: 1fr !important;
+      }
+      
+      div[style*="display: flex"] {
+        flex-direction: column;
+      }
+      
+      .card {
+        width: 100%;
+      }
+      
+      .contact {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+      }
+      
+      ul li {
+        word-break: break-word;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+      
+      header p {
+        font-size: 1rem;
+      }
+      
+      .job-title {
+        font-size: 1rem;
+      }
+      
+      .repo-card {
+        padding: 8px;
       }
     }
 
@@ -301,7 +338,7 @@
 
   <section class="card">
     <h2>Skills</h2>
-    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px;">
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px;" class="skills-container">
       <div>
         <ul>
           <li>Machine Learning (ML)</li>
