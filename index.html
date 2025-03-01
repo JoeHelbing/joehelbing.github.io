@@ -4,207 +4,429 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Joseph Helbing - Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
-    body {
-      font-family: Helvetica, sans-serif;
-      background: #fff;
-      color: #000;
+    :root {
+      --primary-color: #2563eb;
+      --secondary-color: #3b82f6;
+      --accent-color: #1e3a8a;
+      --text-color: #1f2937;
+      --light-text-color: #4b5563;
+      --bg-color: #ffffff;
+      --bg-alt-color: #f3f4f6;
+      --border-color: #e5e7eb;
+    }
+
+    * {
+      box-sizing: border-box;
       margin: 0;
-      padding: 20px;
+      padding: 0;
     }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+    }
+
     .container {
-      max-width: 1200px;
+      max-width: 1000px;
       margin: 0 auto;
-      padding: 30px;
+      padding: 40px 20px;
     }
-    header, footer { text-align: center; }
-    header h1 { margin-bottom: 5px; }
+
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--primary-color);
+      margin-bottom: 8px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: var(--light-text-color);
+      margin-bottom: 16px;
+    }
+
     .contact {
-      margin-top: 10px;
-      font-size: 0.9em;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 16px;
     }
+
     .contact a {
-      color: #000;
+      color: var(--primary-color);
       text-decoration: none;
-      margin: 0 10px;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: all 0.3s ease;
+      font-size: 0.95rem;
     }
-    .contact a:hover { text-decoration: underline; }
+
+    .contact a:hover {
+      color: var(--accent-color);
+    }
+
+    section {
+      margin-bottom: 36px;
+      background: var(--bg-color);
+      border-radius: 8px;
+    }
+
     h2 {
-      border-bottom: 1px solid #000;
-      padding-bottom: 5px;
-      margin-bottom: 15px;
+      font-size: 1.5rem;
+      color: var(--primary-color);
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 8px;
+      margin-bottom: 16px;
+      font-weight: 600;
     }
-    ul { list-style-type: disc; margin-left: 20px; }
-    .job-title { font-weight: bold; font-size: 1.1em; }
-    .date-range { font-style: italic; color: #555; }
+
+    ul {
+      list-style-type: none;
+      margin-left: 0;
+    }
+
+    ul li {
+      margin-bottom: 8px;
+      position: relative;
+      padding-left: 18px;
+    }
+
+    ul li::before {
+      content: "•";
+      color: var(--secondary-color);
+      font-weight: bold;
+      position: absolute;
+      left: 0;
+    }
+
+    .job-title {
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: var(--text-color);
+      margin-bottom: 4px;
+    }
+
+    .date-range {
+      font-style: italic;
+      color: var(--light-text-color);
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+    }
+
     footer {
-      font-size: 0.8em;
-      color: #555;
-      border-top: 1px solid #ccc;
-      padding-top: 10px;
+      font-size: 0.85rem;
+      color: var(--light-text-color);
+      border-top: 1px solid var(--border-color);
+      padding-top: 20px;
+      text-align: center;
+      margin-top: 40px;
     }
-    /* Multicolumn layout for main sections */
-    .columns { display: flex; gap: 20px; }
-    .column-left, .column-right { flex: 1; }
+
     .download-btn {
       position: fixed;
       top: 20px;
       right: 20px;
-      background: #000;
-      color: #fff;
-      padding: 10px 20px;
+      background: var(--primary-color);
+      color: white;
+      padding: 10px 16px;
       text-decoration: none;
-      border-radius: 4px;
-      font-family: Helvetica, sans-serif;
+      border-radius: 6px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      z-index: 100;
+    }
+
+    .download-btn:hover {
+      background: var(--accent-color);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    .project {
+      margin-bottom: 20px;
+    }
+
+    .project a, .job a {
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .project a:hover, .job a:hover {
+      text-decoration: underline;
+    }
+
+    .job {
+      margin-bottom: 30px;
+      padding-bottom: 20px;
+      border-bottom: 1px dashed var(--border-color);
+    }
+
+    .job:last-child {
+      border-bottom: none;
+    }
+
+    .job-position {
+      font-weight: 500;
+      margin-top: 12px;
+      margin-bottom: 4px;
+      padding-left: 20px;
+    }
+
+    .job-position + ul {
+      margin-left: 20px;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .container {
+        padding: 20px 16px;
+      }
+      
+      header h1 {
+        font-size: 2rem;
+      }
+      
+      .download-btn {
+        position: relative;
+        top: auto;
+        right: auto;
+        display: block;
+        margin: 20px auto;
+        width: fit-content;
+      }
+    }
+
+    /* Subtle card style for sections */
+    .card {
+      background: var(--bg-color);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 24px;
+      margin-bottom: 24px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+      transform: translateY(-2px);
+    }
+
+    /* Skills grid layout */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 10px;
+    }
+
+    .skills-grid li::before {
+      content: "✓";
+    }
+
+    /* Top info section */
+    .top-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 40px;
     }
   </style>
 </head>
 <body>
-<a href="https://github.com/JoeHelbing/joehelbing.github.io/blob/f01f5542ca570770e3554a509901149cd02585a5/Joseph%20Helbing%20Resume%20202502.pdf" target="_blank" class="download-btn">Download PDF</a>
+<a href="Joseph Helbing Resume 202503.pdf" target="_blank" class="download-btn">
+  <i class="fas fa-download"></i> Download Resume
+</a>
+
 <div class="container">
   <header>
     <h1>Joseph Helbing</h1>
     <p>Machine Learning Engineer + Data Scientist</p>
     <div class="contact">
-      <a href="tel:+16302404190">+1 630 240 4190</a>
-      <a href="mailto:Joehelbing@gmail.com">Joehelbing@gmail.com</a>
-      <a href="https://github.com/JoeHelbing" target="_blank">github.com/JoeHelbing</a>
+      <a href="tel:+16302404190"><i class="fas fa-phone"></i> +1 630 240 4190</a>
+      <a href="mailto:Joehelbing@gmail.com"><i class="fas fa-envelope"></i> Joehelbing@gmail.com</a>
+      <a href="https://github.com/JoeHelbing" target="_blank"><i class="fab fa-github"></i> github.com/JoeHelbing</a>
     </div>
   </header>
-  <section>
-    <h2>Education</h2>
-    <ul>
-      <li><strong>University of Chicago</strong>, M.A. Computational Social Science [2023]</li>
-      <li><strong>Ohio State University</strong>, M.A. East Asian Languages and Literatures (Mandarin) [2013]</li>
-      <li><strong>University of Illinois at Urbana Champaign</strong>, B.A. Political Science and China Studies [2011]</li>
-    </ul>
-  </section>
 
-  <section>
-    <h2>Languages</h2>
-    <ul>
-      <li>English (Native)</li>
-      <li>Mandarin (Professionally Fluent)</li>
-    </ul>
-  </section>
+  <div style="display: flex; gap: 24px; flex-wrap: wrap; margin-bottom: 24px;">
+    <section class="card" style="flex: 2; min-width: 300px;">
+      <h2>Education</h2>
+      <ul>
+        <li><strong>University of Chicago</strong>, M.A. Computational Social Science [2023]</li>
+        <li><strong>Ohio State University</strong>, M.A. East Asian Languages and Literatures (Mandarin) [2013]</li>
+        <li><strong>University of Illinois at Urbana Champaign</strong>, B.A. Political Science and China Studies [2011]</li>
+      </ul>
+    </section>
 
-  <section>
+    <section class="card" style="flex: 1; min-width: 200px;">
+      <h2>Languages</h2>
+      <ul>
+        <li>English (Native)</li>
+        <li>Mandarin (Professionally Fluent)</li>
+      </ul>
+    </section>
+  </div>
+
+  <section class="card">
     <h2>Skills</h2>
-    <ul>
-      <li>Machine Learning (ML)</li>
-      <li>High Performance Computing (HPC)</li>
-      <li>Natural Language Processing (NLP)</li>
-      <li>Agent Based Modeling and Simulation</li>
-      <li>Python, R, SQL</li>
-      <li>HTML/CSS</li>
-      <li>Web Scraping</li>
-      <li>AWS Textract, S3, GovCloud</li>
-      <li>Data Collection, Analysis and Visualization</li>
-      <li>Plotly, Pyvis</li>
-      <li>Communicating Analysis to Non-Technical Audiences</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Selected Projects</h2>
-    <div class="project">
-      <p class="job-title">Library of Congress - Large-Scale Document Processing System</p>
-      <ul>
-        <li>Architected and implemented an end-to-end pipeline for extracting structured data from 500,000+ military court martial documents across all U.S. military branches.</li>
-        <li>Integrated AWS Textract, custom bounding box algorithms, and LLM refinement to extract 60+ variables from heterogeneous military forms, with built-in quality assurance through a purpose-built GUI for sampling-based human verification.</li>
-        <li>Designed and implemented SQL database architecture for efficient storage and retrieval of extracted information.</li>
-        <li>Led technical training sessions for the US Digital Corps NLP working group.</li>
-        <li><a href="https://gist.github.com/JoeHelbing/17735d23f59efbfc894068a238d9f8df" target="_blank">Project Link</a></li>
-      </ul>
-    </div>
-    <div class="project">
-      <p class="job-title">Equal Employment Opportunity Commission (EEOC) - ML-Based Case Analysis Support</p>
-      <ul>
-        <li>Developed and fine-tuned bi-directional vectorization models using BERT and modernBERT architectures for free-form textual resume classification in support of case investigations.</li>
-      </ul>
-    </div>
-    <div class="project">
-      <p class="job-title">Personal Research Project - Advanced Agent-Based Modeling</p>
-      <ul>
-        <li>Reimagined and implemented Thomas Schelling's Segregation Agent Based Model as individualized Reinforcement Learning agents using PyTorch and Flask.</li>
-        <li><a href="https://github.com/JoeHelbing/rl_abm_exp" target="_blank">Project Link</a></li>
-      </ul>
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px;">
+      <div>
+        <ul>
+          <li>Machine Learning (ML)</li>
+          <li>High Performance Computing (HPC)</li>
+          <li>Natural Language Processing (NLP)</li>
+          <li>Reinforcement Learning (RL) [<a href="https://github.com/JoeHelbing/rl_abm_exp" target="_blank">Repo</a>]</li>
+        </ul>
+      </div>
+      <div>
+        <ul>
+          <li>Python, R, SQL, HTML, CSS, HTMX</li>
+          <li>Web Scraping</li>
+          <li>AWS Textract, S3, GovCloud</li>
+          <li>Agent Based Modeling [<a href="https://github.com/JoeHelbing/cascade" target="_blank">Repo</a>]</li>
+        </ul>
+      </div>
+      <div>
+        <ul>
+          <li>Data Collection, Analysis and Visualization</li>
+          <li>Plotly, Pyvis</li>
+          <li>Communicating Analysis to Non-Technical Audiences</li>
+        </ul>
+      </div>
     </div>
   </section>
 
-  <section>
+  <section class="card">
     <h2>Experience</h2>
     <div class="job">
       <p class="job-title">US Digital Corps at Equal Employment Opportunity Commission (EEOC)</p>
       <p class="date-range">2024 – Present</p>
       <ul>
-        <li>Assisting EEOC investigators on AI and ML-related investigations with technical consulting, forensic source code review, and case-related testing.</li>
-        <li>Driving internal modernization of analytics resources, including setting up cloud computing and virtual machine systems for data science and analytics tasks.</li>
-        <li>Supporting data analysts and statisticians by training language model-based classification systems, conducting network analysis, and employing other modern data science techniques.</li>
-        <li>Upgrading and refactoring existing codebases to achieve performance gains, reduce concurrency issues, and minimize resource footprints on lower cost platforms.</li>
-        <li>Co-leading the US Digital Corps NLP working group, managing administration, facilitating inter-agency knowledge sharing, and conducting training on NLP methods.</li>
+        <li>Assisting EEOC investigators on AI and ML related investigations with technical consulting, forensic source code review, and case related testing.</li>
+        <li>Modernizing analytics infrastructure with cloud computing and VM systems for data science tasks.</li>
+        <li>Assisting EEOC data analysts and statisticians on case investigations by training Language Model based classification systems, network analysis, and other modern data science techniques.</li>
+        <li>Taking ownership of existing codebases of internal analytics tools—upgrading and refactoring with modern best practices to achieve large speedups, limit concurrency issues, and minimize resource footprints, while adapting them to lower cost platforms.</li>
+        <li>Co-leader of US Digital Corps NLP working group, managing group administration, facilitating inter-agency knowledge sharing, and training on NLP methods.</li>
+      </ul>
+      
+      <p class="job-position"><strong>Highlighted Project—Language Model Based Case Analysis Support</strong></p>
+      <ul>
+        <li>Fine-tuned bi-directional encoder decoder vectorization models using BERT and modernBERT architectures for free form textual resume classification in support of case investigations for applicant flow analysis.</li>
+        <li>Used unstructured application text to predict job titles for unhired applicants, using hired applicants' job titles as training data with test-train splits and post training accuracy exploration to assist statisticians in identifying group differences in discrimination investigations.</li>
       </ul>
     </div>
+    
     <div class="job">
       <p class="job-title">Library of Congress Federal Research Division</p>
       <p class="date-range">2023 – 2024</p>
       <ul>
-        <li>Conducted long-form research reporting for military and federal clients, including literature reviews, statistical data analysis, and visualization.</li>
-        <li>Served as technical lead on a large-scale NLP project combining AWS GovCloud with local compute for open weights foundation models in a legal document image extraction pipeline.</li>
-        <li>Contributed to dual-use technology research reports using Chinese source material for a US government client.</li>
+        <li>Long form research reporting for military and federal clients, including literature review, statistical data analysis, and visualization.</li>
+        <li>Technical lead on large-scale Natural Language Processing (NLP) project utilizing a combination of AWS GovCloud and local compute based open weights foundation models in a data extraction pipeline from legal document images.</li>
+        <li>Contributor on dual-use technologies research reports via Chinese source material for US government client.</li>
+      </ul>
+      
+      <p class="job-position"><strong>Highlighted Project—Large-Scale Document Processing System</strong></p>
+      <ul>
+        <li>Architected and implemented an end-to-end pipeline for extracting structured data from 500,000+ military court martial documents across all U.S. military branches.</li>
+        <li>Architected an advanced document processing pipeline integrating AWS Textract, custom bounding box algorithms, and LLM refinement to extract 60+ variables from heterogeneous military forms, with built-in quality assurance through a purpose-built GUI for sampling based human verification.</li>
+        <li>Designed and implemented SQL database architecture for efficient storage and retrieval of extracted information.</li>
+        <li>Led technical training sessions for US Digital Corps NLP working group on LoC standardize form extraction methodology.</li>
+        <li><a href="https://gist.github.com/JoeHelbing/17735d23f59efbfc894068a238d9f8df" target="_blank">https://gist.github.com/JoeHelbing/17735d23f59efbfc894068a238d9f8df</a></li>
       </ul>
     </div>
+    
     <div class="job">
       <p class="job-title">University of Chicago Data Science Institute</p>
-      <p class="date-range">2022</p>
+      <p class="date-range">2022 – 2022</p>
       <ul>
-        <li>Developed a web scraper for the SEC EDGAR API to access corporate reports.</li>
+        <li>Developed a web scraper for the Security and Exchange Commission (SEC) EDGAR API to access corporate reports.</li>
         <li>Utilized statistical textual matching techniques, XBRL scraping, and open-source pretrained machine learning models to create an information extraction pipeline.</li>
       </ul>
     </div>
+    
     <div class="job">
       <p class="job-title">Paratech Inc</p>
       <p class="date-range">2015 – 2021</p>
-      <div style="margin-left:20px;">
-        <p><strong>Marketing Coordinator</strong> (2019 – 2021)</p>
-        <ul>
-          <li>Oversaw updates to the corporate website, managed marketing materials, and fostered dealer partnerships with a focus on tech integration and staff training.</li>
-          <li>Launched a new WordPress website, handling design, content, and CMS management.</li>
-          <li>Developed webinar series via YouTube, trained the sales team, and coordinated live training events.</li>
-        </ul>
-        <p><strong>Industrial Sales Manager</strong> (2017 – 2019)</p>
-        <ul>
-          <li>Developed a new industrial sales market, establishing partnerships with distributors and manufacturing representatives.</li>
-          <li>Produced marketing materials (brochures, videos) using tools such as InDesign, Photoshop, and DaVinci Resolve.</li>
-          <li>Assisted on the production floor during peak times to meet manufacturing targets.</li>
-        </ul>
-        <p><strong>China Regional Sales Manager</strong> (2015 – 2017)</p>
-        <ul>
-          <li>Overhauled Chinese operations strategically and organizationally, improving the company’s positioning while retaining key client relationships.</li>
-          <li>Transitioned local contacts to direct company relationships, maintaining dealer and client networks.</li>
-          <li>Handled contract design and translation between Chinese and English, and negotiated partnerships through multiple visits.</li>
-        </ul>
-      </div>
+      
+      <p class="job-position"><strong>Marketing Coordinator</strong> (2019 – 2021)</p>
+      <ul>
+        <li>Oversaw the update of Paratech's corporate website, managed marketing materials, and fostered dealer partnerships, focusing on tech integration and staff training.</li>
+        <li>Launched a new WordPress website, handling design, content, and CMS.</li>
+        <li>Developed webinar series utilizing YouTube, trained the sales team, and ran live training events in the field broadcast to customers.</li>
+      </ul>
+      
+      <p class="job-position"><strong>Industrial Sales Manager</strong> (2017 – 2019)</p>
+      <ul>
+        <li>Led the development of a new industrial sales market, establishing partnerships with distributors and manufacturing representatives.</li>
+        <li>Produced industrial, military, and maritime marketing materials, including brochures and videos, using tools like InDesign, Photoshop, and DaVinci Resolve.</li>
+        <li>Contributed on the production floor during peak times to meet manufacturing targets.</li>
+      </ul>
+      
+      <p class="job-position"><strong>China Regional Sales Manager</strong> (2015 – 2017)</p>
+      <ul>
+        <li>Overhauled Chinese operations strategically and organizationally, improving the company's position and navigating away from problematic relationships without harming client networks.</li>
+        <li>Transitioned local contacts to direct company relationships, retaining all dealers and clients.</li>
+        <li>Handled contract design and translation between Chinese and English, and directly negotiated partnerships through multiple visits to the country.</li>
+      </ul>
     </div>
+    
     <div class="job">
       <p class="job-title">SiMple International Inc</p>
       <p class="date-range">2014 – 2015</p>
       <ul>
-        <li>Founded a company selling international telecommunications to exchange students through partnership distribution channels.</li>
+        <li>Founded company selling international telecommunications to exchange students through partnership distribution channels.</li>
       </ul>
     </div>
+    
     <div class="job">
       <p class="job-title">INTO University Partnerships</p>
       <p class="date-range">2013 – 2014</p>
       <ul>
-        <li>Recruited students to attend degree programs in the United States in representation of six US universities.</li>
-        <li>Managed recruitment in Northern China (Dalian, Liaoning), planning and executing travel and events, predominantly in Mandarin Chinese.</li>
+        <li>Worked with education consultancy network to recruit students to attend degree programs in the United States in representation of 6 US universities.</li>
+        <li>Northern China recruitment territory based in Dalian, Liaoning China, self-planning and executing travel and events, and position responsibilities executed nearly exclusively in Mandarin Chinese.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Selected Projects</h2>
+    <div class="project">
+      <p class="job-title">Reinforcement Learning Agent Based Model</p>
+      <ul>
+        <li>Reimagined and implemented Thomas Schelling's Segregation Agent Based Model as individualized Reinforcement Learning agents using PyTorch and Flask. <a href="https://github.com/JoeHelbing/rl_abm_exp" target="_blank"><i class="fab fa-github"></i> rl_abm_exp</a></li>
+      </ul>
+    </div>
+    <div class="project">
+      <p class="job-title">Cascade Network Analysis</p>
+      <ul>
+        <li>Developed network analysis and modeling tools to study cascading failures in infrastructure systems. <a href="https://github.com/JoeHelbing/cascade" target="_blank"><i class="fab fa-github"></i> cascade</a></li>
       </ul>
     </div>
   </section>
 
   <footer>
-    <p>© 2025 Joseph Helbing</p>
+    <p>© 2025 Joseph Helbing • Last Updated: March 2025</p>
   </footer>
 </div>
 </body>
